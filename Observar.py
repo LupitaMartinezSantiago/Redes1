@@ -25,11 +25,11 @@ class ScreenShareServer:
                 resized_screenshot.save(byte_io, format='JPEG', quality=50)  # Reduce la calidad para mayor compresión
                 image_data = byte_io.getvalue()
 
-                # Enviar el tamaño de la imagen seguido de los datos de la imagen
+            
                 client_socket.sendall(len(image_data).to_bytes(4, byteorder='big'))
                 client_socket.sendall(image_data)
 
-                time.sleep(0.5)  # Controla la frecuencia de actualización
+                time.sleep(0.5)  
         except Exception as e:
             print("Conexión cerrada:", e)
             client_socket.close()
