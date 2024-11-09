@@ -14,7 +14,6 @@ def conectar_a_servidor(host, puerto):
             print("Desconectado del servidor.")
             break
 
-        # Recibir y mostrar la respuesta
         respuesta = cliente.recv(1024).decode('utf-8')
         print(f"Respuesta del servidor:\n{respuesta}")
 
@@ -22,5 +21,5 @@ def conectar_a_servidor(host, puerto):
 
 if __name__ == "__main__":
     SERVIDOR = "172.168.0.150"  # Dirección del servidor
-    PUERTO = 9999
+    PUERTO = 4000
     conectar_a_servidor(SERVIDOR, PUERTO)
