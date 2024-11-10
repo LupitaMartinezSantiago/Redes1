@@ -14,4 +14,4 @@ def abrir_cliente_nomachine(host):
         print(f"Error: {e}")
 
 # Uso
-abrir_cliente_nomachine("192.168.54.72")
+abrir_cliente_nomachine("0.0.0.0")
