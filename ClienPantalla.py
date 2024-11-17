@@ -21,6 +21,6 @@ def conectar_a_servidor(host, puerto):
     cliente.close()
 
 if __name__ == "__main__":
-    SERVIDOR = "172.168.0.150"  # Dirección del servidor
+    SERVIDOR = "0.0.0.0"  # Dirección del servidor
     PUERTO = 9999
     conectar_a_servidor(SERVIDOR, PUERTO)
