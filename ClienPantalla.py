@@ -15,7 +15,7 @@ def conectar_a_servidor(host, puerto):
             break
 
         # Recibir y mostrar la respuesta
-        respuesta = cliente.recv(1024).decode('utf-8')
+        respuesta = cliente.recv(2222).decode('utf-8')
         print(f"Respuesta del servidor:\n{respuesta}")
 
     cliente.close()
