@@ -42,11 +42,11 @@ root.title("Apagar PC remoto")
 root.geometry("380x380")
 root.resizable(False, False)
 
-# Obtener dimensiones de la pantalla
+
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
 
-# Calcular la posición para centrar la ventana
+
 x = (screen_width // 2) - (380 // 2)
 y = (screen_height // 2) - (380 // 2)
 
