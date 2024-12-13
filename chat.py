@@ -9,7 +9,7 @@ class ChatClient:
         self.server_ip = server_ip
         self.port = port
 
-        # Configuración de la interfaz gráfica
+      
         self.root = root
         self.root.title("Cliente de Chat")
         
@@ -26,10 +26,9 @@ class ChatClient:
         btn_enviar = tk.Button(root, text="Enviar", command=self.enviar_mensaje)
         btn_enviar.pack(pady=20)
 
-        # Conectar al servidor
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect((self.server_ip, self.port))
-        threading.Thread(target=self.recibir_mensajes, daemon=True).start()  # Iniciar hilo para recibir mensajes
+        threading.Thread(target=self.recibir_mensajes, daemon=True).start()  
 
     def enviar_mensaje(self):
         mensaje = self.mensaje_entry.get("1.0", tk.END).strip()
