@@ -18,14 +18,14 @@ def check_rule_exists(command):
 
 def allow_ping(ips):
     for ip in ips:
-        # Verificar si la regla de denegación existe
+      
         check_command = f"sudo iptables -C INPUT -p icmp --icmp-type echo-request -s {ip} -j DROP"
         if check_rule_exists(check_command):
-            # Eliminar la regla de denegación si existe
+           
             command = f"sudo iptables -D INPUT -p icmp --icmp-type echo-request -s {ip} -j DROP"
             run_command(command)
         
-        # Agregar la regla de aceptación
+       
         command = f"sudo iptables -I INPUT -p icmp --icmp-type echo-request -s {ip} -j ACCEPT"
         run_command(command)
         print(f"Ping permitido desde la IP {ip}")
