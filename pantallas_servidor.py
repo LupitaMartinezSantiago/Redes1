@@ -6,13 +6,13 @@ import threading
 import tkinter as tk
 import os
 
-# Variable global para el zoom de cada conexión
+
 zoom_levels = [1.0] * 4
 connections = []
 ips = []
 ips_lock = threading.Lock()
 
-# Carpeta para guardar las capturas de pantalla
+
 screenshot_folder = "screenshots"
 if not os.path.exists(screenshot_folder):
     os.makedirs(screenshot_folder)
@@ -41,7 +41,7 @@ def receive_screen_data(conn, window_name, zoom_level_index):
         frame = np.frombuffer(frame_data, dtype=np.uint8)
         frame = cv2.imdecode(frame, cv2.IMREAD_COLOR)
 
-        # Aplicar zoom
+    
         height, width = frame.shape[:2]
         new_height, new_width = int(height * zoom_levels[zoom_level_index]), int(width * zoom_levels[zoom_level_index])
         frame = cv2.resize(frame, (new_width, new_height), interpolation=cv2.INTER_LINEAR)
