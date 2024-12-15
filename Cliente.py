@@ -26,11 +26,11 @@ class ScreenShareClient:
     def receive_images(self):
         try:
             # Recibir el tamaño de la imagen
-            image_size_data = self.client_socket.recv(8)  # Cambiado a 8 para manejar el tamaño de la imagen
+            image_size_data = self.client_socket.recv(8)  
             if not image_size_data:
                 return
 
-            image_size = struct.unpack("Q", image_size_data)[0]  # "Q" para tamaño de 64 bits (8 bytes)
+            image_size = struct.unpack("Q", image_size_data)[0] 
             image_data = b""
             while len(image_data) < image_size:
                 packet = self.client_socket.recv(2048)  # Reducido el búfer para optimizar la recepción
