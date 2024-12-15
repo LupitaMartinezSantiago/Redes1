@@ -14,15 +14,15 @@ class ScreenShareServer:
     def handle_client(self, client_socket):
         try:
             while True:
-                # Captura de pantalla
+              
                 screenshot = ImageGrab.grab()
                 
-                # Redimensionar la imagen al 50% del tamaño original
+              
                 width, height = screenshot.size
                 resized_screenshot = screenshot.resize((width // 2, height // 2), Image.ANTIALIAS)
                 
                 byte_io = io.BytesIO()
-                resized_screenshot.save(byte_io, format='JPEG', quality=50)  # Reduce la calidad para mayor compresión
+                resized_screenshot.save(byte_io, format='JPEG', quality=50)  
                 image_data = byte_io.getvalue()
 
             
