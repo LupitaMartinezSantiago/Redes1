@@ -1,10 +1,10 @@
 import socket
 import threading
-import pyautogui  # Para ver las pantallas recibidas
+import pyautogui  
 import os
 
 # Configuración del servidor
-HOST = '0.0.0.0'  # Escuchar en todas las interfaces de red disponibles
+HOST = '0.0.0.0'  
 PORT = 12345
 
 clientes = []
@@ -25,7 +25,7 @@ def manejar_cliente(conn, addr):
                 print(f"[{addr}] dice: {mensaje}")
                 broadcast(f"CHAT:{mensaje}", conn)
 
-            # Comando para captura de pantalla
+          
             elif data.startswith("SCREENSHOT"):
                 recibir_pantalla(conn)
 
