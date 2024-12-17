@@ -33,7 +33,7 @@ class ChatClient:
     def enviar_mensaje(self):
         mensaje = self.mensaje_entry.get("1.0", tk.END).strip()
         if mensaje:
-            self.client_socket.send(mensaje.encode("utf-8"))  # Enviar mensaje al servidor
+            self.client_socket.send(mensaje.encode("utf-8"))  
             self.chat_display.insert(tk.END, f"Tú: {mensaje}\n")
             self.mensaje_entry.delete("1.0", tk.END)
         else:
@@ -42,7 +42,7 @@ class ChatClient:
     def recibir_mensajes(self):
         while True:
             try:
-                mensaje = self.client_socket.recv(1024).decode("utf-8")  # Recibir mensaje del servidor
+                mensaje = self.client_socket.recv(1024).decode("utf-8")  
                 if mensaje:
                     self.chat_display.insert(tk.END, f"Servidor: {mensaje}\n")  # Mostrar mensaje en el chat
             except Exception as e:
