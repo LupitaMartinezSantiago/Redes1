@@ -40,6 +40,6 @@ class ScreenShareServer:
         print(f"Cliente conectado desde: {addr}")
         threading.Thread(target=self.handle_client, args=(client_socket,), daemon=True).start()
 
-# Configuración del servidor
+
 server = ScreenShareServer("0.0.0.0", 2222)
 server.run()
