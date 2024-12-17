@@ -57,7 +57,7 @@ def receive_screen_data(conn, window_name, zoom_level_index):
         elif key == ord('+'):
             zoom_levels[zoom_level_index] += 0.1
         elif key == ord('-'):
-            zoom_levels[zoom_level_index] = max(0.1, zoom_levels[zoom_level_index] - 0.1)  # Evitar zoom negativo o cero
+            zoom_levels[zoom_level_index] = max(0.1, zoom_levels[zoom_level_index] - 0.1)  
         elif key == ord('c'):
             screenshot_path = os.path.join(screenshot_folder, f'screenshot_{window_name}.png')
             cv2.imwrite(screenshot_path, frame)
@@ -79,11 +79,11 @@ def handle_connection(conn, address):
 
 def update_ip_buttons():
     global ips
-    # Eliminar todos los botones actuales
+    
     for widget in ip_frame.winfo_children():
         widget.destroy()
         
-    # Crear botones para cada IP
+    
     for ip in ips:
         btn = tk.Button(ip_frame, text=ip, command=lambda ip=ip: connect_to_ip(ip))
         btn.pack(pady=5)
