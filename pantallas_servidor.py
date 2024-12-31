@@ -105,10 +105,10 @@ ip_frame.pack(pady=20)
 # Iniciar el servidor en un hilo separado
 def start_server():
     host = '0.0.0.0'
-    port = 5001  # Usa un puerto diferente que esté libre
+    port = 5001  
     server_socket = socket.socket()
     server_socket.bind((host, port))
-    server_socket.listen(4)  # Escuchar hasta 4 conexiones
+    server_socket.listen(4)
     print("Server listening on port", port)
 
     while True:
@@ -120,7 +120,7 @@ server_thread = threading.Thread(target=start_server)
 server_thread.daemon = True
 server_thread.start()
 
-# Función para cerrar la ventana de Tkinter
+
 def on_closing():
     root.destroy()
 
