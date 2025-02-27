@@ -61,7 +61,7 @@ ips = ['0.0.0.0']
 root = tk.Tk()
 root.title("PINGS")
 root.geometry("400x200")
-
+# Permite o deniega los permisos
 action_label = tk.Label(root, text="¿Quieres permitir o denegar el ping?")
 action_label.pack(pady=10)
 
@@ -70,7 +70,7 @@ action_variable.set("Seleccione la accion")  # Valor por defecto
 
 action_menu = tk.OptionMenu(root, action_variable, "permitir", "denegar")
 action_menu.pack(pady=10)
-
+# Boton de ejecutar
 execute_button = tk.Button(root, text="Ejecutar", command=lambda: execute_action(action_variable.get()))
 execute_button.pack(pady=10)
 
