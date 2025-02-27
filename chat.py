@@ -29,7 +29,7 @@ class ChatClient:
         self.client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         self.client_socket.connect((self.server_ip, self.port))
         threading.Thread(target=self.recibir_mensajes, daemon=True).start()  
-
+#Enviar los mensajes
     def enviar_mensaje(self):
         mensaje = self.mensaje_entry.get("1.0", tk.END).strip()
         if mensaje:
@@ -38,7 +38,7 @@ class ChatClient:
             self.mensaje_entry.delete("1.0", tk.END)
         else:
             self.chat_display.insert(tk.END, "Mensaje vacío.\n")
-
+#Funcion para recibir los mensajes
     def recibir_mensajes(self):
         while True:
             try:
