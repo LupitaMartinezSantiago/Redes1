@@ -95,14 +95,13 @@ def connect_to_ip(ip):
             threading.Thread(target=receive_screen_data, args=(conn, window_name, ips.index(ip))).start()
             break
 
-# Configuración de la interfaz gráfica
 root = tk.Tk()
 root.title("Screen Viewer")
 
 ip_frame = tk.Frame(root)
 ip_frame.pack(pady=20)
 
-# Iniciar el servidor en un hilo separado
+
 def start_server():
     host = '0.0.0.0'
     port = 5001  
