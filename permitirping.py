@@ -54,14 +54,14 @@ def execute_action(action):
     else:
         messagebox.showerror("Error", "Acción no válida.")
 
-# Direcciones IP predeterminadas
+
 ips = ['0.0.0.0']
 
-# Crear la interfaz gráfica
+
 root = tk.Tk()
 root.title("PINGS")
 root.geometry("400x200")
-# Permite o deniega los permisos
+
 action_label = tk.Label(root, text="¿Quieres permitir o denegar el ping?")
 action_label.pack(pady=10)
 
