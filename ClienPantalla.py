@@ -1,4 +1,5 @@
 import socket
+#Importaciones
 
 def conectar_a_servidor(host, puerto):
     cliente = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
