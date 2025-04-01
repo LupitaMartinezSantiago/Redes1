@@ -68,7 +68,7 @@ tk.Label(root, text="Contraseña de la computadora:").pack(anchor="w", padx=20)
 contraseña_entry = tk.Entry(root, show="*")
 contraseña_entry.pack(fill="x", padx=20)
 contraseña_entry.bind("<KeyRelease>", habilitar_boton)
-
+#Boton de apagado
 btn_apagar = tk.Button(root, text="Apagar", command=ejecutar_apagado, state=tk.DISABLED)
 btn_apagar.pack(pady=20)
 
