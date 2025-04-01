@@ -4,7 +4,7 @@ import threading
 import io
 import time
 from PIL import ImageGrab, Image
-#Codigo para observar al los clientes
+
 class ScreenShareServer:
     def __init__(self, ip, port):
         self.server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
