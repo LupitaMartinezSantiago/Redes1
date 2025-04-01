@@ -13,5 +13,5 @@ def abrir_cliente_nomachine(host):
     except Exception as e:
         print(f"Error: {e}")
 
-# Uso
+
 abrir_cliente_nomachine("0.0.0.0")
