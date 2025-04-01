@@ -3,10 +3,9 @@ import threading
 import pyautogui  
 import os
 
-# Configuración del servidor
 HOST = '0.0.0.0'  
 PORT = 12345
-
+# Configuración del servidor
 clientes = []
 
 def manejar_cliente(conn, addr):
